@@ -5,6 +5,7 @@ const mongoose = require("mongoose")
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use('/',express.static('./views'))
 app.use("/", require("./routes/api-routes"))
 
 app.listen(PORT, ()=> {
