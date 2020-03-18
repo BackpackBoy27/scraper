@@ -13,10 +13,14 @@ router.get('/api/all', (res, req)=>{
 })
 
 router.post('/api/new', (req, res)=>{
+    console.log('server:', req.body)
     Article.create({
         title: req.body.title,
-        body: req.body.body
-    }).then(res=>{console.log(res)}).catch(err=>console.log(err));
+        description: req.body.description
+    }).then(result=>{
+        console.log(result)
+        res.send(result)
+    }).catch(err=>console.log(err));
 })
 
 module.exports = router;
