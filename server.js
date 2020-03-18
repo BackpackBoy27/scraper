@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use('/',express.static('./views'))
+app.use('/', express.static('./views'))
 app.use("/", require("./routes/api-routes"))
 
 app.listen(PORT, ()=> {
@@ -19,6 +19,7 @@ mongoose.connect("mongodb+srv://ghost:catpaws@cluster0-h508y.mongodb.net/DinoDB?
     })
     .then(() => console.log("Connected to mongoDB"))
     .catch(err => console.log("Error: ", err));
+
 
 
 
